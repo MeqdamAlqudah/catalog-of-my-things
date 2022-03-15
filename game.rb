@@ -14,6 +14,10 @@ class Game < Items
     super && last_played?
   end
 
+  def to_string
+    "Game #{super} Multiplayer: #{@multiplayer} Last Played At: #{@last_played_at}"
+  end
+
   def last_played?
     year = "#{@last_played_at[6]}#{@last_played_at[7]}#{@last_played_at[8]}#{@last_played_at[9]}"
     month = "#{@last_played_at[3]}#{@last_played_at[4]}"

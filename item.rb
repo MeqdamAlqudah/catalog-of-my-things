@@ -11,6 +11,10 @@ class Items
 
   attr_reader :id
 
+  def to_string
+    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived}" 
+  end
+
   def genre=(genre)
     @genre = genre
     genre.items.push(self) unless genre.items.include?(self)
