@@ -7,9 +7,7 @@ class Items
     @archived = archived
   end
 
-  attr_accessor :publish_date, :archived
-
-  attr_reader :id
+  attr_accessor :publish_date, :archived, :id
 
   def to_string
     "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived}" 
