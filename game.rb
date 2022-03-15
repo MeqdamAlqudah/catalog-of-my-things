@@ -1,4 +1,4 @@
-require_relative './item.rb'
+require_relative './item'
 
 class Game < Items
   @games = []
@@ -11,11 +11,7 @@ class Game < Items
   attr_accessor :multiplayer, :last_played_at
 
   def can_be_archived?
-    if super && last_played?
-      return true
-    else 
-      return false
-    end
+    super && last_played?
   end
 
   def last_played?
@@ -31,5 +27,4 @@ class Game < Items
 
     var > 2
   end
-
 end
