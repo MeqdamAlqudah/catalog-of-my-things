@@ -1,4 +1,7 @@
+require 'date'
+
 class Items
+
   def initialize(publish_date, archived) 
     @id = Random.rand(1..2000)
     @publish_date = publish_date
@@ -26,10 +29,27 @@ class Items
   end
 
   def can_be_archived?
-    @archived
+    year = "#{@publish_date[6]}#{@publish_date[7]}#{@publish_date[8]}#{@publish_date[9]}"
+    month = "#{@publish_date[3]}#{@publish_date[4]}"
+    day = "#{@publish_date[0]}#{@publish_date[1]}"
+
+    now = Date.today
+    before = Date.civil(year.to_i, month.to_i, day.to_i)
+    difference_in_days = (now - before).to_i
+
+    var = (difference_in_days/365.25).to_i
+
+    if var > 10
+      return true
+    else
+      return false
+    end
   end
 
   def move_to_archive
-    @archived = true;
+    if can_be_archived?
+      @archived = true
+    end
   end
+
 end
