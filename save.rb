@@ -1,6 +1,6 @@
 require 'json'
 
-class Save 
+class Save
   def save_authors(authors)
     arr = []
     authors.each { |n| arr.push([n.first_name, n.last_name]) }

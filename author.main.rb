@@ -1,4 +1,4 @@
-require_relative './author.rb'
+require_relative './author'
 
 class Authormain
   def list_all_author(authors)

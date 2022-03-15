@@ -1,10 +1,9 @@
-require_relative './game.rb'
-require_relative './author.rb'
+require_relative './game'
+require_relative './author'
 
-
-class Load 
+class Load
   def load_authors(authors)
-    return unless File.zero?('./authors.json')  == false
+    return unless File.zero?('./authors.json') == false
 
     file_ing = File.read('./authors.json')
     var = JSON.parse(file_ing)
