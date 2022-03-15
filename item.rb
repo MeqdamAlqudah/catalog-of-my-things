@@ -1,8 +1,7 @@
 require 'date'
 
 class Items
-
-  def initialize(publish_date, archived) 
+  def initialize(publish_date, archived)
     @id = Random.rand(1..2000)
     @publish_date = publish_date
     @archived = archived
@@ -37,19 +36,12 @@ class Items
     before = Date.civil(year.to_i, month.to_i, day.to_i)
     difference_in_days = (now - before).to_i
 
-    var = (difference_in_days/365.25).to_i
+    var = (difference_in_days / 365.25).to_i
 
-    if var > 10
-      return true
-    else
-      return false
-    end
+    var > 10
   end
 
   def move_to_archive
-    if can_be_archived?
-      @archived = true
-    end
+    @archived = true if can_be_archived?
   end
-
 end
