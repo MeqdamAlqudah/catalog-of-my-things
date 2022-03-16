@@ -1,13 +1,13 @@
 class Label
   def initialize(title, color)
-    @id = 0
+    @id = Random.rand(1..2000)
     @items = []
     @title = title
     @color = color
   end
 
   def add_item(item)
-    @items << item
+    @items.push(item)
     item.label(self)
   end
 
