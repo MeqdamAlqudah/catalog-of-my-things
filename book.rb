@@ -10,6 +10,10 @@ class Book < Item
     super.can_be_archived?
   end
 
+  def to_string
+    "Game #{super} Publisher: #{@publisher} Cover state: #{@cover_state}"
+  end
+
   def to_json(*args)
     {
       JSON.create_id => self.class.name,

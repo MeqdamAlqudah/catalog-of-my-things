@@ -11,6 +11,10 @@ class Label
     item.label(self)
   end
 
+  def to_string
+    "Title: #{@title} Color: #{@color}"
+  end
+
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
