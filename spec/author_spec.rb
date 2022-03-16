@@ -1,9 +1,9 @@
-require './spec_helper'
+require 'spec_helper'
 
 describe 'Testing the Author class' do
   before :each do
     @author = Author.new('First Name', 'Last Name')
-    @item = Item.new('publish_date', 'archived')
+    @item = Items.new('publish_date', 'archived')
   end
 
   it 'with the above parameter a Author object should be created' do
@@ -20,6 +20,6 @@ describe 'Testing the Author class' do
 
   it 'add an item to items' do
     @author.add_items(@item)
-    @author.items[0] to eq @item
+    expect(@author.items[0]).to eq @item
   end
 end

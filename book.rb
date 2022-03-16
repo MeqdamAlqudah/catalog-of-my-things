@@ -1,4 +1,4 @@
-class Book < Item
+class Book < Items
   def initialize(publish_date, archived, publisher, cover_state)
     super(publish_date, archived)
     @publisher = publisher
@@ -6,13 +6,14 @@ class Book < Item
   end
 
   def can_be_archived?
-    return if @cover_state == "bad"
-    super.can_be_archived?
+    super || @cover_state == "bad"
   end
 
   def to_string
     "Game #{super} Publisher: #{@publisher} Cover state: #{@cover_state}"
   end
+
+  attr_accessor :publisher, :cover_state
 
   def to_json(*args)
     {
