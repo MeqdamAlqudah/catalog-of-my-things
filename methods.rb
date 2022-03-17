@@ -13,10 +13,10 @@ end
 
 # Add a book
 def add_book
-  publish_date = input_string()
-  archived = input_string()
-  publisher = input_string()
-  cover_state = input_string()
+  publish_date = input_string
+  archived = input_string
+  publisher = input_string
+  cover_state = input_string
   book = Book.new(publish_date, archived, publisher, cover_state)
   @books << book
 end
