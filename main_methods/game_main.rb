@@ -2,10 +2,12 @@ require_relative '../game'
 
 class Gamemain
   def list_all_games(games)
-    games.each { |n| puts n.to_string }
+    var = ''
+    games.each { |n| var += "#{n.to_string} \n" }
+    var
   end
 
-  def create_a_game(games)
+  def create_a_game_user(games)
     puts 'Enter Publish date'
     publish = gets.chomp
     puts 'Enter if archived'
@@ -19,5 +21,9 @@ class Gamemain
     games.push(game)
 
     puts 'Game created succesfully'
+  end
+
+  def create_a_game(game, games)
+    games.push(game)
   end
 end

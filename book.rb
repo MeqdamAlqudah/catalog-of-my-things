@@ -12,7 +12,7 @@ class Book < Items
   end
 
   def to_string
-    "Game #{super} Publisher: #{@publisher} Cover state: #{@cover_state}"
+    "Book #{super} Publisher: #{@publisher} Cover state: #{@cover_state}"
   end
 
   attr_accessor :publisher, :cover_state

@@ -94,7 +94,7 @@ class Main
     when 8
       list_all_sources
     when 9
-      @default_book.add_book(@books)
+      @default_book.add_book_user(@books)
     when 10
       add_a_music_album
     else
@@ -109,7 +109,7 @@ class Main
     when 11
       add_a_movie
     when 12
-      @default_game.create_a_game(@games)
+      @default_game.create_a_game_user(@games)
     when 13
       false
     else
