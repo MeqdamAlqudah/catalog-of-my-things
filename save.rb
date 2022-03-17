@@ -19,14 +19,14 @@ class Save
     arr = []
     books.each { |n| arr.push([n.publish_date, n.archived, n.publisher, n.cover_state]) }
     books_json = JSON.generate(arr)
-    File.write('./json/books.json', books_json) 
+    File.write('./json/books.json', books_json)
   end
 
   def save_label(labels)
     arr = []
     labels.each { |n| arr.push([n.title, n.color]) }
     labels_json = JSON.generate(arr)
-    File.write('./json/labels.json')
+    File.write('./json/labels.json', labels_json)
   end
 
   def save(authors, games, books, labels)

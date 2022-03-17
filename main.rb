@@ -1,9 +1,9 @@
-require_relative './main_methods/author_main'
-require_relative './main_methods/book_main'
-require_relative './main_methods/label_main'
-require_relative './main_methods/game_main'
-require_relative './save'
-require_relative './load'
+require_relative 'main_methods/author_main'
+require_relative 'main_methods/book_main'
+require_relative 'main_methods/label_main'
+require_relative 'main_methods/game_main'
+require_relative 'save'
+require_relative 'load'
 
 require 'json'
 

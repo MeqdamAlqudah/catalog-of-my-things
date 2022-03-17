@@ -48,7 +48,7 @@ class Load
     end
   end
 
-  def load(authors, games, books, lables)
+  def load(authors, games, books, _lables)
     load_authors(authors)
     load_games(games)
     load_books(books)

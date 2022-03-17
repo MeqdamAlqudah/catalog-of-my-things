@@ -1,4 +1,4 @@
-require_relative './item'
+require_relative 'item'
 
 class Game < Items
   def initialize(publish_date, archived, multiplayer, last_played_at)

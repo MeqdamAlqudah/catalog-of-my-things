@@ -5,10 +5,10 @@ class Items
     @id = Random.rand(1..2000)
     @publish_date = publish_date
     @archived = archived
-    @genre
-    @author
-    @source
-    @label
+    @genre = nil
+    @author = nil
+    @source = nil
+    @label = nil
   end
 
   attr_accessor :publish_date, :archived, :id
