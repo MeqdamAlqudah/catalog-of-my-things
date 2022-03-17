@@ -1,19 +1,15 @@
 CREATE TABLE books (
   id INT PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY,
-  genre VARCHAR(200),
-  author VARCHAR(200),
-  source VARCHAR(200),
-  label FOREIGN KEY (label_id) REFERENCES labels (id) ON DELETE SET NULL,
+  genre_id INT,
+  author_id INT,
+  source_id INT,
+  label_id FOREIGN KEY (label_id) REFERENCES labels (id) ON DELETE SET NULL,
   publish_date DATE,
   archived BOOLEAN,
   publisher VARCHAR(200),
   cover_state VARCHAR(200),
 );
 
-CREATE TABLE labels (
-  id INT PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY,
-  title VARCHAR(200),
-  color VARCHAR(200),
-  ITEM_ID INT,
-  CONSTRAINT fk_item FOREGIN KEY (ITEM_ID) REFERENCES ITEMS (ID) ON DELETE SET NULL
-);
+ALTER TABLE books CONSTRAINT fk_genre FOREGIN Key (genre_id) REFERENCES genre (id)
+ALTER TABLE books CONSTRAINT fk_author FOREGIN Key (author_id) REFERENCES author (id)
+ALTER TABLE books CONSTRAINT fk_source FOREGIN Key (source_id) REFERENCES source (id)
