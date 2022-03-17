@@ -1,7 +1,6 @@
-require_relative './item'
+require_relative 'item'
 
 class Game < Items
-  @games = []
   def initialize(publish_date, archived, multiplayer, last_played_at)
     super(publish_date, archived)
     @multiplayer = multiplayer

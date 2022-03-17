@@ -5,6 +5,10 @@ class Items
     @id = Random.rand(1..2000)
     @publish_date = publish_date
     @archived = archived
+    @genre = nil
+    @author = nil
+    @source = nil
+    @label = nil
   end
 
   attr_accessor :publish_date, :archived, :id
@@ -25,13 +29,15 @@ class Items
 
   def source=(source)
     @source = source
-    source.items.push(self) unless source.items.includes?(self)
+    source.items.push(self) unless source.items.include?(self)
   end
 
   def label=(label)
     @label = label
-    label.items.push(self) unless label.items.includes?(self)
+    label.items.push(self) unless label.items.include?(self)
   end
+
+  attr_reader :label, :source, :author, :genre
 
   def can_be_archived?
     year = "#{@publish_date[6]}#{@publish_date[7]}#{@publish_date[8]}#{@publish_date[9]}"
