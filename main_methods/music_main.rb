@@ -2,7 +2,9 @@ require_relative './music'
 
 class Musicmain
   def list_all_music_albums(albums)
-    albums.each { |n| puts n.to_string }
+    var = ''
+    albums.each { |n| var += "#{n.to_string} \n" }
+    var
   end
 
   def add_a_music_album(albums)

@@ -1,5 +1,7 @@
 class Labelmain
   def list_all_labels(labels)
-    labels.each { |label| puts label.to_string }
+    var = ''
+    labels.each { |n| var += "#{n.to_string} \n" }
+    var
   end
 end
