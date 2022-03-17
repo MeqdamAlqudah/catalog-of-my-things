@@ -2,16 +2,27 @@ require_relative '../book'
 
 class Bookmain
   # Add a book
-  def add_book(books)
-    publish_date = input_string
-    archived = input_string
-    publisher = input_string
-    cover_state = input_string
-    book = Book.new(publish_date, archived, publisher, cover_state)
+  def add_book_user(books)
+    puts 'Enter Publish date'
+    publish = gets.chomp
+    puts 'Enter if archived'
+    archived = gets.chomp
+    puts 'Enter Publisher'
+    publisher = gets.chomp
+    puts 'Enter the state of the cover'
+    cover_state = gets.chomp
+
+    book = Book.new(publish, archived, publisher, cover_state)
+    books.push(books)
+
+    puts 'Game created succesfully'
+  end
+
+  def add_book(book, books)
     books.push(book)
   end
 
   def list_all_books(books)
-    books.each { |book| puts book.to_string }
+    books.each { |n| return n.to_string }
   end
 end
