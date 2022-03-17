@@ -2,7 +2,7 @@ require_relative '../game'
 
 class Gamemain
   def list_all_games(games)
-    games.each { |n| puts n.to_string }
+    games.each { |n| return n.to_string }
   end
 
   def create_a_game_user(games)
