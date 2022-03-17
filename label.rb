@@ -8,7 +8,15 @@ class Label
 
   def add_item(item)
     @items.push(item)
-    item.label(self)
+    item.label = (self)
+  end
+
+  attr_reader :items, :id
+
+  attr_accessor :title, :color
+
+  def to_string
+    "Title: #{@title} Color: #{@color}"
   end
 
   def to_json(*args)

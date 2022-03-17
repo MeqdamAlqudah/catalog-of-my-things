@@ -1,4 +1,4 @@
-require_relative './game'
+require_relative '../game'
 
 class Gamemain
   def list_all_games(games)
