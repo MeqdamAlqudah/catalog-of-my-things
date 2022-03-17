@@ -1,3 +1,24 @@
+require_relative './main_methods/author_main'
+require_relative './main_methods/book_main'
+require_relative './main_methods/label_main'
+require_relative './main_methods/game_main'
+require_relative './save'
+require_relative './load'
+
+require 'json'
+
+@default_author = Authormain.new
+@default_book = Bookmain.new
+@default_game = Gamemain.new
+@default_label = Labelmain.new
+@default_save = Save.new
+@default_load = Load.new
+
+@books = []
+@labels = []
+@authors = []
+@games = []
+
 class Main
   def list_all_books
     puts 'under construction'
@@ -67,13 +88,13 @@ class Main
   def other_options(value)
     case value.to_i
     when 6
-      list_all_labels
+      @default_label.list_all_labels(@labels)
     when 7
-      list_all_authors
+      @default_author.list_all_author(@authors)
     when 8
       list_all_sources
     when 9
-      add_a_book
+      @default_book.add_book(@books)
     when 10
       add_a_music_album
     else
@@ -88,7 +109,7 @@ class Main
     when 11
       add_a_movie
     when 12
-      add_a_game
+      @default_game.create_a_game(@games)
     when 13
       false
     else
@@ -99,13 +120,13 @@ class Main
   def casses(value)
     case value.to_i
     when 1
-      list_all_books
+      @default_book.list_all_books(@books)
     when 2
       list_all_music_albums
     when 3
       list_all_movies
     when 4
-      list_of_games
+      @default_game.list_all_games(@games)
     when 5
       list_all_genres
     else
@@ -116,6 +137,7 @@ class Main
   end
 
   def app_loop
+    @default_load.load(@authors, @games, @books, @labels)
     message = list
     flag = true
     while flag
@@ -123,6 +145,7 @@ class Main
       value = gets.chomp
       flag = casses value
     end
+    @default_save.save(@authors, @games, @books, @labels)
   end
 end
 

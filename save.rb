@@ -28,4 +28,11 @@ class Save
     labels_json = JSON.generate(arr)
     File.write('./json/labels.json')
   end
+
+  def save(authors, games, books, labels)
+    save_authors(authors)
+    save_games(games)
+    save_books(books)
+    save_label(labels)
+  end
 end

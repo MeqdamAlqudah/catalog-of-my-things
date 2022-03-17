@@ -47,4 +47,11 @@ class Load
       labels.push(new_label)
     end
   end
+
+  def load(authors, games, books, lables)
+    load_authors(authors)
+    load_games(games)
+    load_books(books)
+    load_labels(labels)
+  end
 end

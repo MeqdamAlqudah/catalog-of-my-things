@@ -1,3 +1,5 @@
+require_relative '../book'
+
 class Bookmain
   # Add a book
   def add_book(books)
