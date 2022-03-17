@@ -13,7 +13,7 @@ describe Label do
   end
 end
 
-describe "Testing the label related main methods" do 
+describe 'Testing the label related main methods' do
   before :each do
     @label = Label.new('title', 'color')
     @labelmain = Labelmain.new
@@ -24,6 +24,6 @@ describe "Testing the label related main methods" do
     @labels.push(@label)
 
     expect(@labels.length).to eq 1
-    expect(@labelmain.list_all_labels(@labels)).to eq "Title: #{@labels[0].title} Color: #{@labels[0].color}"
+    expect(@labelmain.list_all_labels(@labels)).to eq "Title: #{@labels[0].title} Color: #{@labels[0].color} \n"
   end
 end

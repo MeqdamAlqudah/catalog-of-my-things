@@ -24,7 +24,7 @@ describe 'Testing the Author class' do
   end
 end
 
-describe "Testing the author related main methods" do 
+describe 'Testing the author related main methods' do
   before :each do
     @author = Author.new('First Name', 'Last Name')
     @authormain = Authormain.new
@@ -35,6 +35,6 @@ describe "Testing the author related main methods" do
     @authors.push(@author)
 
     expect(@authors.length).to eq 1
-    expect(@authormain.list_all_author(@authors)).to eq "#{@authors[0].first_name} #{@authors[0].last_name}"
+    expect(@authormain.list_all_author(@authors)).to eq "#{@authors[0].first_name} #{@authors[0].last_name} \n"
   end
 end

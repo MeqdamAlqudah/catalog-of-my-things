@@ -13,7 +13,7 @@ class Bookmain
     cover_state = gets.chomp
 
     book = Book.new(publish, archived, publisher, cover_state)
-    books.push(books)
+    books.push(book)
 
     puts 'Game created succesfully'
   end
@@ -23,6 +23,8 @@ class Bookmain
   end
 
   def list_all_books(books)
-    books.each { |n| return n.to_string }
+    var = ''
+    books.each { |n| var += "#{n.to_string} \n" }
+    var
   end
 end

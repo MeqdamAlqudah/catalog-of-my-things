@@ -15,7 +15,7 @@ describe Book do
   end
 end
 
-describe "Testing the book related main methods" do 
+describe 'Testing the book related main methods' do
   before :each do
     @book = Book.new('02/02/2020', false, 'Publishbook', 'bad')
     @bookmain = Bookmain.new
@@ -26,6 +26,9 @@ describe "Testing the book related main methods" do
     @bookmain.add_book(@book, @books)
 
     expect(@books.length).to eq 1
-    expect(@bookmain.list_all_books(@books)).to eq "Book ID: #{@books[0].id} Published Date: #{@books[0].publish_date} Archived: #{@books[0].archived} Publisher: #{@books[0].publisher} Cover state: #{@books[0].cover_state}"
+    @books[0].id = 232
+    expect(@bookmain.list_all_books(@books)).to eq 'Book ID: 232 Published Date: 02/02/2020 '\
+                                                   'Archived: false Publisher: Publishbook Cover state: bad '\
+                                                   "\n"
   end
 end

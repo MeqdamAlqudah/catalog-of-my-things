@@ -24,7 +24,7 @@ describe 'Testing the Game class' do
   end
 end
 
-describe "Testing the game related main methods" do 
+describe 'Testing the game related main methods' do
   before :each do
     @game = Game.new('09-09-2009', true, true, '20-05-2005')
     @gamemain = Gamemain.new
@@ -35,6 +35,9 @@ describe "Testing the game related main methods" do
     @gamemain.create_a_game(@game, @games)
 
     expect(@games.length).to eq 1
-    expect(@gamemain.list_all_games(@games)).to eq "Game ID: #{@games[0].id} Published Date: #{@games[0].publish_date} Archived: #{@games[0].archived} Multiplayer: #{@games[0].multiplayer} Last Played At: #{@games[0].last_played_at}"
+    @games[0].id = 232
+    expect(@gamemain.list_all_games(@games)).to eq 'Game ID: 232 Published Date: 09-09-2009 '\
+                                                   'Archived: true Multiplayer: true Last Played At: 20-05-2005 '\
+                                                   "\n"
   end
 end
