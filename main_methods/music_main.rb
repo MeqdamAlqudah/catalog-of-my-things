@@ -1,4 +1,4 @@
-require_relative './music'
+require_relative '../music'
 
 class Musicmain
   def list_all_music_albums(albums)

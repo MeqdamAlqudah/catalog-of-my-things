@@ -1,4 +1,5 @@
 require_relative './item'
+
 class Gener
   attr_reader :items
 
@@ -10,5 +11,9 @@ class Gener
 
   def add_item(item)
     item.genre = (self)
+  end
+
+  def to_string
+    "#{@name}"
   end
 end

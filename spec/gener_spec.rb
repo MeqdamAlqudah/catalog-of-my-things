@@ -1,5 +1,5 @@
-require_relative "../item.rb"
-require_relative "../gener.rb"
+require 'spec_helper'
+
 describe "Test gener class" do
     it "Should add item to itmes array"  do
         gener = Gener.new("Comedy")
@@ -8,4 +8,11 @@ describe "Test gener class" do
         expect(gener.items.length).to eq(1)
     end
     
+    it "list all genres test" do
+        geners = []
+        gener = Gener.new('Thriller')
+        geners.push(gener)
+        main = Maingener.new
+        expect(main.list_all_genres(geners)).to eq "Thriller \n"
+    end
 end
