@@ -1,7 +1,6 @@
 require_relative './item'
 
 class Gener
-  attr_reader :items
 
   def initialize(name)
     @id = Random.new.rand(10_000)
@@ -12,6 +11,9 @@ class Gener
   def add_item(item)
     item.genre = (self)
   end
+
+  attr_reader :items
+  attr_accessor :name
 
   def to_string
     "#{@name}"

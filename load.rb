@@ -48,10 +48,34 @@ class Load
     end
   end
 
-  def load(authors, games, books, _lables)
+  def load_music(music)
+    return unless File.zero?('./json/music.json') == false
+
+    file_ing = File.read('./json/music.json')
+    var = JSON.parse(file_ing)
+    var.each do |n|
+      new_music = MusicAlbum.new(n[0], n[1], n[2])
+      music.push(new_music)
+    end
+  end
+
+  def load_genre(genres)
+    return unless File.zero?('./json/genre.json') == false
+
+    file_ing = File.read('./json/genre.json')
+    var = JSON.parse(file_ing)
+    var.each do |n|
+      new_genre = Gener.new(n[0])
+      genres.push(new_genre)
+    end
+  end
+
+  def load(authors, games, books, lables, music, genres)
     load_authors(authors)
     load_games(games)
     load_books(books)
     load_labels(labels)
+    load_music(music)
+    load_genre(genres)
   end
 end
