@@ -9,7 +9,6 @@ class Gener
   end
 
   def add_item(item)
-    item.genre(self)
-    items.push(item)
+    item.genre = (self)
   end
 end

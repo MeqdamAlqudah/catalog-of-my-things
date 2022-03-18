@@ -8,7 +8,7 @@ class MusicAlbum < Items
     @on_spotity = on_spotity
   end
 
-  def can_be_archived?()
+  def can_music_be_archived?()
     (can_be_archived? && @on_spotity)
   end
 end
