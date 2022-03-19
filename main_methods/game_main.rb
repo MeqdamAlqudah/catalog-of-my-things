@@ -8,13 +8,13 @@ class Gamemain
   end
 
   def create_a_game_user(games)
-    puts 'Enter Publish date'
+    print 'Enter Publish date'
     publish = gets.chomp
-    puts 'Enter if archived'
+    print 'Enter if archived'
     archived = gets.chomp
-    puts 'Enter if Multiplayer'
+    print 'Enter if Multiplayer'
     multi = gets.chomp
-    puts 'Enter when last played'
+    print 'Enter when last played'
     last_played = gets.chomp
 
     game = Game.new(publish, archived, multi, last_played)

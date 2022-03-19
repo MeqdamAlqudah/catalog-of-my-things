@@ -29,10 +29,29 @@ class Save
     File.write('./json/labels.json', labels_json)
   end
 
-  def save(authors, games, books, labels)
+  def save_music(music)
+    arr = []
+    music.each { |n| arr.push([n.publish_date, n.archived, n.on_spotity]) }
+    music_json = JSON.generate(arr)
+    File.write('./json/music.json', music_json)
+  end
+
+  def save_genre(genres)
+    arr = []
+    genres.each { |n| arr.push([n.name]) }
+    genre_json = JSON.generate(arr)
+    File.write('./json/genre.json', genre_json)
+  end
+
+  def save(authors, games, books)
     save_authors(authors)
     save_games(games)
     save_books(books)
+  end
+
+  def save_second(labels, music, genres)
     save_label(labels)
+    save_music(music)
+    save_genre(genres)
   end
 end

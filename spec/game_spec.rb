@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe 'Testing the Game class' do
   before :each do
     @game = Game.new('09-09-2009', true, true, '20-05-2005')
