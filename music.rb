@@ -11,7 +11,7 @@ class MusicAlbum < Items
   end
 
   def to_string
-    "#{super} On spotity: #{@on_spotity}"
+    "Music Album #{super} On spotity: #{@on_spotity}"
   end
 
   attr_accessor :on_spotity

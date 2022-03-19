@@ -72,22 +72,15 @@ class Load
     end
   end
 
-  def load(authors, games, books, labels, music, genres)
+  def load(authors, games, books)
     load_authors(authors)
     load_games(games)
     load_books(books)
+  end
+
+  def load_second(labels, music, genres)
     load_labels(labels)
     load_music(music)
     load_genre(genres)
   end
 end
-
-author = []
-games = []
-books = []
-label = []
-music = []
-genres = []
-
-var = Load.new
-var.load(author, games, books, label, music, genres)

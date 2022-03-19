@@ -1,7 +1,6 @@
 require_relative './item'
 
 class Gener
-
   def initialize(name)
     @id = Random.new.rand(10_000)
     @name = name
@@ -16,6 +15,6 @@ class Gener
   attr_accessor :name
 
   def to_string
-    "#{@name}"
+    @name.to_s
   end
 end

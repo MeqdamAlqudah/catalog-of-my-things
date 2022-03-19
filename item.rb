@@ -40,7 +40,6 @@ class Items
   attr_reader :label, :source, :author, :genre
 
   def can_be_archived?
-
     year = "#{@publish_date[6]}#{@publish_date[7]}#{@publish_date[8]}#{@publish_date[9]}"
     month = "#{@publish_date[3]}#{@publish_date[4]}"
     day = "#{@publish_date[0]}#{@publish_date[1]}"
@@ -58,4 +57,3 @@ class Items
     @archived = true if can_be_archived?
   end
 end
-

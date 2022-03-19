@@ -43,10 +43,13 @@ class Save
     File.write('./json/genre.json', genre_json)
   end
 
-  def save(authors, games, books, labels, music, genres)
+  def save(authors, games, books)
     save_authors(authors)
     save_games(games)
     save_books(books)
+  end
+
+  def save_second(labels, music, genres)
     save_label(labels)
     save_music(music)
     save_genre(genres)
