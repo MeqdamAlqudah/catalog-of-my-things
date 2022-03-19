@@ -14,6 +14,9 @@ This app is a simple console app that allows users to manage collections of the 
 - Add a movie
 - Add a game
 
+## Project Presentation
+[Presentation Link](https://www.veed.io/view/3b918feb-78c4-4b42-b1f4-fe8fb909715b)
+
 ## Built With
 - Ruby
 
