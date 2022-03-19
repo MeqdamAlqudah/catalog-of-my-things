@@ -2,6 +2,8 @@ require_relative './game'
 require_relative './author'
 require_relative './book'
 require_relative './label'
+require_relative './music'
+require_relative './gener'
 
 class Load
   def load_authors(authors)
@@ -70,7 +72,7 @@ class Load
     end
   end
 
-  def load(authors, games, books, lables, music, genres)
+  def load(authors, games, books, labels, music, genres)
     load_authors(authors)
     load_games(games)
     load_books(books)
@@ -79,3 +81,13 @@ class Load
     load_genre(genres)
   end
 end
+
+author = []
+games = []
+books = []
+label = []
+music = []
+genres = []
+
+var = Load.new
+var.load(author, games, books, label, music, genres)

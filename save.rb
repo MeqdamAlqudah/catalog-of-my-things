@@ -33,14 +33,14 @@ class Save
     arr = []
     music.each { |n| arr.push([n.publish_date, n.archived, n.on_spotity]) }
     music_json = JSON.generate(arr)
-    File.write('./json/music.json')
+    File.write('./json/music.json', music_json)
   end
 
   def save_genre(genres)
     arr = []
     genres.each { |n| arr.push([n.name]) }
     genre_json = JSON.generate(arr)
-    File.write('./json/genre.json')
+    File.write('./json/genre.json', genre_json)
   end
 
   def save(authors, games, books, labels, music, genres)
