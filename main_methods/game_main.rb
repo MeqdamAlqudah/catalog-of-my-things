@@ -9,7 +9,7 @@ class Gamemain
     var
   end
 
-  def create_a_game_user(games, labels, authors, genres)
+  def user_inputs
     print 'Enter Publish date(dd/mm/yyyy): '
     publish = gets.chomp
     print 'Enter if archived (true/false): '
@@ -25,19 +25,22 @@ class Gamemain
     print 'Enter Label(e.g. \'Title\' \'Color\'): '
     label = gets.chomp
 
+    [publish, archived, multi, last_played, genre, author, label]
+  end
+
+  def create_a_game_user(games, labels, authors, genres)
+    publish, archived, multi, last_played, genre, author, label = user_inputs
 
     game = Game.new(publish, archived, multi, last_played)
-    author = author.split(' ')
+    author = author.split
     author_class = Author.new(author[0], author[1])
     genre_class = Gener.new(genre)
-    label = label.split(' ')
+    label = label.split
     label_class = Label.new(label[0], label[1])
 
-    
     game.genre = (genre_class)
     game.author = (author_class)
     game.label = (label_class)
-
 
     genres.push(genre_class)
     labels.push(label_class)

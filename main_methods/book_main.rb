@@ -3,8 +3,7 @@ require_relative '../gener'
 require_relative '../author'
 require_relative '../save'
 class Bookmain
-  # Add a book
-  def add_book_user(books, labels, authors, genres)
+  def user_inputs
     print 'Enter Publish date(dd/mm/yyyy): '
     publish = gets.chomp
     print 'Enter if archived (true/false): '
@@ -20,20 +19,22 @@ class Bookmain
     print 'Enter Label(e.g. \'Title\' \'Color\'): '
     label = gets.chomp
 
+    [publish, archived, publisher, cover_state, genre, author, label]
+  end
 
-    #Object declarations 
+  def add_book_user(books, labels, authors, genres)
+    publish, archived, publisher, cover_state, genre, author, label = user_inputs
+
     book = Book.new(publish, archived, publisher, cover_state)
-    author = author.split(' ')
+    author = author.split
     author_class = Author.new(author[0], author[1])
     genre_class = Gener.new(genre)
-    label = label.split(' ')
+    label = label.split
     label_class = Label.new(label[0], label[1])
 
-    
     book.genre = (genre_class)
     book.author = (author_class)
     book.label = (label_class)
-
 
     genres.push(genre_class)
     labels.push(label_class)

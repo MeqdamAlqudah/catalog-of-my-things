@@ -9,7 +9,7 @@ class Musicmain
     var
   end
 
-  def add_a_music_album(albums, labels, authors, genres)
+  def user_inputs
     print 'Enter Publish date(dd/mm/yyyy): '
     publish = gets.chomp
     print 'Enter if archived: (true/false) '
@@ -23,14 +23,18 @@ class Musicmain
     print 'Enter Label(e.g. \'Title\' \'Color\'): '
     label = gets.chomp
 
+    [publish, archived, spotity, genre, author, label]
+  end
 
-    music_album = MusicAlbum.new(publish, archived,spotity)
-    author = author.split(' ')
+  def add_a_music_album(albums, labels, authors, genres)
+    publish, archived, spotity, genre, author, label = user_inputs
+
+    music_album = MusicAlbum.new(publish, archived, spotity)
+    author = author.split
     author_class = Author.new(author[0], author[1])
     genre_class = Gener.new(genre)
-    label = label.split(' ')
+    label = label.split
     label_class = Label.new(label[0], label[1])
-
 
     music_album.genre = (genre_class)
     music_album.author = (author_class)

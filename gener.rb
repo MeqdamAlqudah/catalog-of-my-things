@@ -13,7 +13,7 @@ class Gener
   attr_accessor :name, :id
 
   def to_string
-    "#{@name}"
+    @name.to_s
   end
 
   def to_json(*args)

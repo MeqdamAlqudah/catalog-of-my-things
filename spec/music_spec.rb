@@ -19,7 +19,6 @@ describe 'Test all main music album related method' do
     @music.author = (new_author)
     @music.label = (new_label)
 
-
     @main_albums = Musicmain.new
     @music_albums = []
   end

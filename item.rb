@@ -40,8 +40,6 @@ class Items
     label.items.push(self) unless label.items.include?(self)
   end
 
-  attr_reader :label, :source, :author, :genre
-
   def can_be_archived?
     year = "#{@publish_date[6]}#{@publish_date[7]}#{@publish_date[8]}#{@publish_date[9]}"
     month = "#{@publish_date[3]}#{@publish_date[4]}"

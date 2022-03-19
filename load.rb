@@ -27,7 +27,7 @@ class Load
       new_genre = Gener.new(n[4])
       new_author = Author.new(n[5], n[6])
       new_label = Label.new(n[7], n[8])
-      
+
       new_game.genre = (new_genre)
       new_game.author = (new_author)
       new_game.label = (new_label)
@@ -50,7 +50,6 @@ class Load
       new_book.genre = (new_genre)
       new_book.author = (new_author)
       new_book.label = (new_label)
-
 
       books.push(new_book)
     end
@@ -81,7 +80,6 @@ class Load
       new_music.genre = (new_genre)
       new_music.author = (new_author)
       new_music.label = (new_label)
-
 
       music.push(new_music)
     end
