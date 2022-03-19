@@ -16,8 +16,8 @@ class Items
 
   def to_string
     "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived} \n" \
-      "Gener: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}\n" \
-      "Label(title, color): #{@label.title} #{@label.color}"
+      "Genre: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}\n" \
+      "Label: #{@label.title} #{@label.color}"
   end
 
   def genre=(genre)
