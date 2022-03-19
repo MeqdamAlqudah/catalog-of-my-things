@@ -20,7 +20,7 @@ class Musicmain
     genre = gets.chomp
     print 'Enter author(first_name last_name): '
     author = gets.chomp
-    music_album = MusicAlbum.new(spotity, publish, archived)
+    music_album = MusicAlbum.new(publish, archived,spotity)
     gener_class = Gener.new(genre)
     music_album.genre = (gener_class)
     Save.new.save_genre([gener_class])
