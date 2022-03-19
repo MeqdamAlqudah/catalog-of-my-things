@@ -7,15 +7,17 @@ class Items
     @archived = archived
     @genre = nil
     @author = nil
-    @source = nil
     @label = nil
   end
 
   attr_accessor :publish_date, :archived, :id
 
+  attr_reader :genre, :author, :label
+
   def to_string
-    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived}" \
-      " Gener: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}"
+    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived} \n" \
+      "Gener: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}\n" \
+      "Label(title, color): #{@label.title} #{@label.color}"
   end
 
   def genre=(genre)

@@ -24,6 +24,14 @@ class Load
     var = JSON.parse(file_ing)
     var.each do |n|
       new_game = Game.new(n[0], n[1], n[2], n[3])
+      new_genre = Gener.new(n[4])
+      new_author = Author.new(n[5], n[6])
+      new_label = Label.new(n[7], n[8])
+      
+      new_game.genre = (new_genre)
+      new_game.author = (new_author)
+      new_game.label = (new_label)
+
       games.push(new_game)
     end
   end
@@ -35,6 +43,15 @@ class Load
     var = JSON.parse(file_ing)
     var.each do |n|
       new_book = Book.new(n[0], n[1], n[2], n[3])
+      new_genre = Gener.new(n[4])
+      new_author = Author.new(n[5], n[6])
+      new_label = Label.new(n[7], n[8])
+
+      new_book.genre = (new_genre)
+      new_book.author = (new_author)
+      new_book.label = (new_label)
+
+
       books.push(new_book)
     end
   end
@@ -57,6 +74,15 @@ class Load
     var = JSON.parse(file_ing)
     var.each do |n|
       new_music = MusicAlbum.new(n[0], n[1], n[2])
+      new_genre = Gener.new(n[3])
+      new_author = Author.new(n[4], n[5])
+      new_label = Label.new(n[6], n[7])
+
+      new_music.genre = (new_genre)
+      new_music.author = (new_author)
+      new_music.label = (new_label)
+
+
       music.push(new_music)
     end
   end

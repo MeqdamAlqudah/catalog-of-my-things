@@ -51,9 +51,9 @@ def other_options(value)
   when 8
     puts 'Method not in requirements'
   when 9
-    @default_book.add_book_user(@books)
+    @default_book.add_book_user(@books, @labels, @authors, @genres)
   when 10
-    @default_music.add_a_music_album(@music)
+    @default_music.add_a_music_album(@music, @labels, @authors, @genres)
   else
 
     returned = other_second_options(value)
@@ -66,7 +66,7 @@ def other_second_options(value)
   when 11
     puts 'Method not in requirements'
   when 12
-    @default_game.create_a_game_user(@games)
+    @default_game.create_a_game_user(@games, @labels, @authors, @genres)
   when 13
     false
   else
@@ -85,7 +85,7 @@ def casses(value)
   when 4
     puts @default_game.list_all_games(@games)
   when 5
-    puts @default_genre.list_all_genres(Load.new.load_genre(@genres))
+    puts @default_genre.list_all_genres(@genres)
   else
     returned = other_options(value)
     return false if returned == false
