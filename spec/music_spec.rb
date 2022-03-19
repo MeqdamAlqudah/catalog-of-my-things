@@ -17,7 +17,7 @@ describe 'Test all main music album related method' do
   it 'Test list all album method' do
     @music.id = 232
     @music_albums.push(@music)
-    expect(@main_albums.list_all_music_albums(@music_albums)).to eq 'ID: 232 Published Date: 02/07/2009 '\
+    expect(@main_albums.list_all_music_albums(@music_albums)).to eq 'Music Album ID: 232 Published Date: 02/07/2009 '\
                                                                     'Archived: false On spotity: false '\
                                                                     "\n"
   end

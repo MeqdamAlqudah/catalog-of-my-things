@@ -67,7 +67,8 @@ class Load
     file_ing = File.read('./json/genre.json')
     var = JSON.parse(file_ing)
     var.each do |n|
-      new_genre = Gener.new(n[0])
+      new_genre = Gener.new(n[1])
+      new_genre.id = n[0]
       genres.push(new_genre)
     end
   end

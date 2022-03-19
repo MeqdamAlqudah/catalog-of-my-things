@@ -12,7 +12,7 @@ class Book < Items
   end
 
   def to_string
-    "Book #{super} Publisher: #{@publisher} Cover state: #{@cover_state}"
+    "Book #{super}  Cover state: #{@cover_state}"
   end
 
   attr_accessor :publisher, :cover_state
@@ -20,7 +20,7 @@ class Book < Items
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'a' => [genre, author, source, label, publish_date, archived, publisher, cover_state]
+      'a' => [genre, author, source, label, publish_date, archived, publisher, cover_state, genre]
     }.to_json(*args)
   end
 

@@ -85,7 +85,7 @@ def casses(value)
   when 4
     puts @default_game.list_all_games(@games)
   when 5
-    puts @default_genre.list_all_genres(@geners)
+    puts @default_genre.list_all_genres(Load.new.load_genre(@genres))
   else
     returned = other_options(value)
     return false if returned == false

@@ -1,21 +1,29 @@
 require_relative '../book'
-
+require_relative '../gener'
+require_relative '../author'
+require_relative '../save'
 class Bookmain
   # Add a book
   def add_book_user(books)
-    puts 'Enter Publish date'
+    print 'Enter Publish date(dd/mm/yy): '
     publish = gets.chomp
-    puts 'Enter if archived'
+    print 'Enter if archived: '
     archived = gets.chomp
-    puts 'Enter Publisher'
+    print 'Enter Publisher(first_name last_name): '
     publisher = gets.chomp
-    puts 'Enter the state of the cover'
+    print 'Enter the state of the cover: '
     cover_state = gets.chomp
-
+    print 'Enter the genre(e.g \'Comedy\', \'Thriller\'): '
+    genre = gets.chomp
     book = Book.new(publish, archived, publisher, cover_state)
+    gener_class = Gener.new(genre)
+    book.genre = (gener_class)
+    Save.new.save_genre([gener_class])
+    publisher = publisher.split
+    book.author = (Author.new(publisher[0], publisher[1]))
     books.push(book)
 
-    puts 'Game created succesfully'
+    puts 'Book created succesfully'
   end
 
   def add_book(book, books)

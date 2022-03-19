@@ -10,14 +10,14 @@ class Save
 
   def save_games(games)
     arr = []
-    games.each { |n| arr.push([n.publish_date, n.archived, n.multiplayer, n.last_played_at]) }
+    games.each { |n| arr.push([n.publish_date, n.archived, n.multiplayer, n.last_played_at, n.designer, n.genre]) }
     games_json = JSON.generate(arr)
     File.write('./json/games.json', games_json)
   end
 
   def save_books(books)
     arr = []
-    books.each { |n| arr.push([n.publish_date, n.archived, n.publisher, n.cover_state]) }
+    books.each { |n| arr.push([n.publish_date, n.archived, n.publisher, n.cover_state, n.genre]) }
     books_json = JSON.generate(arr)
     File.write('./json/books.json', books_json)
   end
@@ -31,14 +31,14 @@ class Save
 
   def save_music(music)
     arr = []
-    music.each { |n| arr.push([n.publish_date, n.archived, n.on_spotity]) }
+    music.each { |n| arr.push([n.publish_date, n.archived, n.on_spotity, n.genre, n.author]) }
     music_json = JSON.generate(arr)
     File.write('./json/music.json', music_json)
   end
 
   def save_genre(genres)
     arr = []
-    genres.each { |n| arr.push([n.name]) }
+    genres.each { |n| arr.push([n.id, n.name]) }
     genre_json = JSON.generate(arr)
     File.write('./json/genre.json', genre_json)
   end

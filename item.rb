@@ -14,7 +14,7 @@ class Items
   attr_accessor :publish_date, :archived, :id
 
   def to_string
-    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived}"
+    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived} Gener: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}"
   end
 
   def genre=(genre)
