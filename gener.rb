@@ -1,5 +1,3 @@
-require_relative './item'
-
 class Gener
   def initialize(name)
     @id = Random.new.rand(10_000)
@@ -12,9 +10,20 @@ class Gener
   end
 
   attr_reader :items
-  attr_accessor :name
+  attr_accessor :name, :id
 
   def to_string
     @name.to_s
+  end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'a' => [id, name]
+    }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    new(*object['a'])
   end
 end

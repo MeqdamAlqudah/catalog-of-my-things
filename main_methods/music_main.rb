@@ -1,4 +1,6 @@
 require_relative '../music'
+require_relative '../gener'
+require_relative '../author'
 
 class Musicmain
   def list_all_music_albums(albums)
@@ -7,15 +9,42 @@ class Musicmain
     var
   end
 
-  def add_a_music_album(albums)
-    print 'Enter Publish date: '
+  def user_inputs
+    print 'Enter Publish date(dd/mm/yyyy): '
     publish = gets.chomp
-    print 'Enter if archived: '
+    print 'Enter if archived: (true/false) '
     archived = gets.chomp
-    print 'Enter if they are on spotity: '
+    print 'Enter if they are on spotity: (true/false) '
     spotity = gets.chomp
-    music_album = MusicAlbum.new(spotity, publish, archived)
+    print 'Enter the genre(e.g \'Comedy\', \'Thriller\'): '
+    genre = gets.chomp
+    print 'Enter Author(first_name last_name): '
+    author = gets.chomp
+    print 'Enter Label(e.g. \'Title\' \'Color\'): '
+    label = gets.chomp
+
+    [publish, archived, spotity, genre, author, label]
+  end
+
+  def add_a_music_album(albums, labels, authors, genres)
+    publish, archived, spotity, genre, author, label = user_inputs
+
+    music_album = MusicAlbum.new(publish, archived, spotity)
+    author = author.split
+    author_class = Author.new(author[0], author[1])
+    genre_class = Gener.new(genre)
+    label = label.split
+    label_class = Label.new(label[0], label[1])
+
+    music_album.genre = (genre_class)
+    music_album.author = (author_class)
+    music_album.label = (label_class)
+
+    genres.push(genre_class)
+    labels.push(label_class)
+    authors.push(author_class)
     albums.push(music_album)
+
     puts 'Music 🎵 abum was added sucssesfully😎🎼'
   end
 end

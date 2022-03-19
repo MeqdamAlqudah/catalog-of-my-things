@@ -7,14 +7,17 @@ class Items
     @archived = archived
     @genre = nil
     @author = nil
-    @source = nil
     @label = nil
   end
 
   attr_accessor :publish_date, :archived, :id
 
+  attr_reader :genre, :author, :label
+
   def to_string
-    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived}"
+    "ID: #{@id} Published Date: #{@publish_date} Archived: #{@archived} \n" \
+      "Genre: #{@genre.name} Author: #{@author.first_name} #{@author.last_name}\n" \
+      "Label: #{@label.title} #{@label.color}"
   end
 
   def genre=(genre)
@@ -36,8 +39,6 @@ class Items
     @label = label
     label.items.push(self) unless label.items.include?(self)
   end
-
-  attr_reader :label, :source, :author, :genre
 
   def can_be_archived?
     year = "#{@publish_date[6]}#{@publish_date[7]}#{@publish_date[8]}#{@publish_date[9]}"
